@@ -12,17 +12,6 @@
     <link rel="stylesheet" href="dist/reveal.css" />
     <link rel="stylesheet" href="dist/theme/black.css" id="theme" />
     <link rel="stylesheet" href="lib/css/zenburn.css" />
-
-    <!-- Printing and PDF exports -->
-    <script>
-      var link = document.createElement("link");
-      link.rel = "stylesheet";
-      link.type = "text/css";
-      link.href = window.location.search.match(/print-pdf/gi)
-        ? "css/print/pdf.css"
-        : "css/print/paper.css";
-      document.getElementsByTagName("head")[0].appendChild(link);
-    </script>
   </head>
   <body>
     <div class="reveal">
@@ -150,18 +139,18 @@ export default function Product({ product }) {
             the server side before sending it to the client.
           </li>
         </section>
+
         <section>
           <h2>NEXT.JS ARCHITECTURE</h2>
           <p>
             You can create a new application on Next.js using a ready-made
-            toolkit: <b>npx create-next-app my-app</b>
-            Next.js supports eslint and CSS modules out of the box (in the
-            styles folder). Static files can be placed in the public folder,
-            just like in regular React. But the most important folder for us is
-            pages.
+            toolkit: <i>npx create-next-app my-app</i> Next.js supports eslint and CSS
+            modules out of the box. Static files can be placed in the public
+            folder, just like in regular React. But the most important folder
+            for us is pages.
           </p>
-          <p></p>
         </section>
+
         <section>
           <img data-src="assets/file-system.png" width="600px" heigth="500px" />
         </section>
@@ -170,10 +159,9 @@ export default function Product({ product }) {
         </section>
         <section>
           <p>
-            Each file inside this folder (except for the api folder, _app and
-            _document files) is treated by Next.js as a separate page. It is
-            important to remember this. This is how Next.js automatically
-            converts the file structure to a URL, including dynamic parameters.
+            Each file inside this folder (except api folder, _app and _document)
+            is treated by Next.js as a separate page. This is how Next.js automatically converts the file
+            structure to a URL, including dynamic parameters.
           </p>
         </section>
         <section>
@@ -183,54 +171,60 @@ export default function Product({ product }) {
           </p>
         </section>
         <section>
+          <p>getServerSideProps</p>
           <p>
-            getServerSideProps will be called on every request while the
-            application is running. Inside, you can make calls to external
-            services and APIs to get the latest up-to-date information.
-            Depending on whether a person is visiting the site for the first
-            time or simply moving between pages, this call will be made either
-            on the server or on the client.
+            will be called on every request while the application is running.
+            Inside, you can make calls to external services and APIs to get the
+            latest up-to-date information. Depending on whether a person is
+            visiting the site for the first time or simply moving between pages,
+            this call will be made either on the server or on the client.
           </p>
         </section>
         <section>
+          <p>getStaticProps</p>
           <p>
-            getStaticProps will be called once when building the application, it
-            will prepare the finished HTML files. Let's say you have a list of
-            articles that are rarely updated. They can be pre-rendered with
-            getStaticProps and these pages will load faster since they already
-            have all the information. Both functions need to be exported with
-            this named export so that Next.js can see and use them.
+            will be called once when building the application, it will prepare
+            the finished HTML files. Let's say you have a list of articles that
+            are rarely updated. They can be pre-rendered with getStaticProps and
+            these pages will load faster since they already have all the
+            information. Both functions need to be exported with this named
+            export so that Next.js can see and use them.
           </p>
         </section>
         <section>
           <p>
             Next.js provides features and components that are needed for
-            specific use cases. Brief description of the most commonly used:
+            specific use cases.
           </p>
           <ul>
             <li>
-              next/router is a module for working with the Next.js router.
-              Needed for programmatic redirects, getting data from a URL on the
+              <b>next/router</b> is a module for working with the Next.js
+              router. Programmatic redirects, getting data from a URL on the
               client.
             </li>
             <li>
-              next/link is a Link component that renders the "correct" links. In
-              HTML markup, they will be regular <code><a></code> tags and will
-              work even if the user has JS disabled. If JS is enabled, a
-              transition will occur on click using client-side rendering and
-              Next.js optimizations.
+              <b>next/link</b> component that renders the "correct" links. They
+              will be regular a tags and will work even if the user has JS
+              disabled. If JS is enabled, a transition will occur on click using
+              client-side rendering and Next.js optimizations.
             </li>
-            <li>
-              next/head is a <code><Head></code> component that allows you to change the
-              content of the <code><Head></code> tag without regard to
-              the server/client render.
-            </li>
-            <li>
-              next/script - Script component for connecting external scripts on
-              the client (for example, metrics).
-            </li>
-            <li></li>
           </ul>
+        </section>
+        <section>
+          <ul>
+            <li>
+              <b>next/head</b> is a component that allows you to change the
+              content of the head tag without regard to the server/client
+              render.
+            </li>
+            <li>
+              <b>next/script</b> - Script component for connecting external
+              scripts on the client (for example, metrics).
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h2>That's all, thanks for listening!</h2>
         </section>
       </div>
     </div>
